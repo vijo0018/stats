@@ -13,14 +13,14 @@ FIREBASE LOGIN: user:vidar@vidar.se  pw:123456
 
 
 <p align="center">
-  <img src="./images/home.png" width="350"/>
+  <img src="./images/home.PNG" width="350"/>
 </p>
 
 <p align="center">
-  <img src="./images/stats.png" width="350"/>
+  <img src="./images/stats.PNG" width="350"/>
 </p>
 
 <p align="center">
-  <img src="./images/art.png" width="350"/>
+  <img src="./images/art.PNG" width="350"/>
 </p>
 
