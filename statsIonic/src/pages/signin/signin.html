@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div>
+
+  </div>
+
+  <ion-list padding>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input [(ngModel)] = "usercreds.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input [(ngModel)] = "usercreds.password" type="password"></ion-input>
+    </ion-item>
+    <button ion-button (click)="login(usercreds)">Login</button>
+  </ion-list>
+
+</ion-content>

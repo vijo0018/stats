@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title end>Events</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let e of event; let i = index;">
+      <ion-col  col-12>
+        <div>
+          <h1 style="padding-top: 20px;">{{e.Title}}</h1>
+          <h4>{{e.Description}}</h4>
+          <img src="{{e.ImageURL}}" width="350" height="400">
+
+          <p>Adress: {{e.Adress}}</p>
+
+          <p>Base price: {{e.BasePrice}}</p>
+
+          <p>Created at: {{e.CreatedAt | date}}</p>
+
+          <p> End date: {{e.EndDate | date}}</p>
+
+          <p> MemberPrice: {{e.MemberPrice}}</p>
+
+          <p>Sale stop:  {{e.SaleStop | date :'short'}}</p>
+
+          <p> StartDate: {{e.StartDate | date:'short'}}</p>
+
+          <p>Updated at: {{e.UpdatedAt | date :'short'}}</p>
+
+          <p> ZipCode: {{e.ZipCode}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-menu [content]="nav">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div>
+      <video autoplay muted loop class="bg-vid">
+        <source src="http://video2.ignitemotion.com/files/mp4/bluefire.mp4" type="video/webm">
+        <source src="http://video2.ignitemotion.com/files/mp4/bluefire.mp4" type="video/mp4">
+      </video>
+    </div>
+    <ion-list>
+      <div class="menu" *ngIf="isAuthed">
+        <button class="menuButton" menuClose [class.activeHighlight]="checkActive(p)" ion-item *ngFor="let p of pages" (click)="onLoad(p)">
+          <ion-icon [name]="p.icon" item-left></ion-icon>
+          {{p.title}}
+        </button>
+      </div>
+
+      <button *ngIf="isAuthed" class="menuButton" ion-item (click)="onLogout()" menuClose>
+        <ion-icon class="menuIcon" name="log-out" item-left></ion-icon>
+        Logout
+      </button>
+
+      <div *ngIf="!isAuthed">
+        <button class="menuButton" [class.activeHighlight]="checkActive(p)" ion-item (click)="onLoadPage(signinPage)">
+          <ion-icon class="menuIcon" name="log-in" item-left></ion-icon>
+          LogIn
+        </button>
+      </div>
+      <div *ngIf="!isAuthed">
+        <button class="menuButton" [class.activeHighlight]="checkActive(p)" ion-item (click)="onLoadPage(signupPage)">
+          <ion-icon class="menuIcon" name="add-circle" item-left></ion-icon>
+          Register
+        </button>
+      </div>
+    </ion-list>
+    <div *ngIf="!isAuthed">
+      <button class="menuButton" ion-item (click)="onLoadPage(fbsignin)">
+        <ion-icon class="menuIcon" name="log-in" item-left></ion-icon>
+        Firebase - login
+      </button>
+    </div>
+    <div *ngIf="!isAuthed">
+      <button class="menuButton" ion-item (click)="onLoadPage(fbsignup)">
+        <ion-icon class="menuIcon" name="add-circle" item-left></ion-icon>
+        Firebase - Register
+      </button>
+    </div >
+
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #nav></ion-nav>

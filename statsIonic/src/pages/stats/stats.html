@@ -1,0 +1,135 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Stats</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="contentCenter" *ngFor="let sum of playerSummary"><a class="linkStyle" href="{{sum.profileurl}}">
+    <h1>{{sum.personaname}}</h1><img src="{{sum.avatarfull}}"></a>
+    <h5>Last seen - {{sum.lastlogoff  *1000| date:'EEEE HH:mm:ss'}}</h5>
+    <h5>Account created - {{sum.timecreated * 1000 | date:'yyyy-MM-dd'}}</h5>
+  </div>
+  <div class="contentCenter" *ngFor="let vac of vacRecord">
+    <div *ngIf=" vac.VACBanned == false;">
+      <h5>No vacations here</h5>
+    </div>
+
+  </div>
+  <div>
+    <video autoplay muted loop class="bg-vid">
+      <source src="http://video2.ignitemotion.com/files/mp4/bluefire.mp4" type="video/webm">
+      <source src="http://video2.ignitemotion.com/files/mp4/bluefire.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="contentCenter">
+  <ion-row>
+
+    <ion-col>
+      <div>
+      <ion-icon class="fontSizeIcon" name="md-flame"></ion-icon>
+      <label class="fontSizeText"> {{a | number}}</label>
+        <h4>Kills</h4>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-icon class="fontSizeIcon" name="md-close"></ion-icon>
+        <label class="fontSizeText"> {{b | number}}</label>
+        <h4>Deaths</h4>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col class="col2">
+      <div class="divPos"><p>K/D Ratio</p><p style="font-size: 23px; margin: 0;">{{c | number}}</p></div>
+      <div style="width: 200px; height: 200px;">
+        <canvas *ngIf="isLoaded" class="content" style="display: inline-flex;" baseChart
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              [options]="pieChartOptions"
+              [colors]="pieChartColors">
+        </canvas>
+      </div>
+    </ion-col>
+    <ion-col>
+    </ion-col>
+  </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-icon class="fontSizeIcon" name="ios-timer"></ion-icon>
+          <label class="fontSizeText"> {{totalTime | number}}h</label>
+          <h4>Time played</h4>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <img src="../../assets/icon/HeadShot.png" width="50"/>
+          <label class="fontSizeText"> {{headshot | percent}}</label>
+          <h4>Headshot</h4>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="contentCenter divStyle">
+  <button ion-button (click)="moreInfo()">Show more</button>
+  <div *ngIf="wasClicked == true">
+  <div margin-top="0"><h5> Total cash: {{cash | currency:'USD':true }}</h5></div>
+  <div><h5>K/D Ratio: {{c | number}}</h5></div>
+  <div><h5>Accuracy: {{accuracy | percent}}</h5></div>
+    <div><h5>Fire: {{fire | number}}</h5></div>
+    <div><h5>Hits: {{hits | number }}</h5></div>
+  </div>
+  <div class="divStyle">
+    <h1>Last game</h1>
+    <ion-row>
+<ion-col></ion-col>
+      <ion-col>
+        <div class="divPos2"><p>{{lastKdr | number}}</p></div>
+          <div style="display: block; width: 100px; height: 100px;">
+            <canvas *ngIf="isLoaded" style="display: inline-flex; margin-right: 150px;" baseChart
+                    [data]="LatestPieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    [options]="pieChartOptions"
+                    [colors]="pieChartColors"
+            ></canvas>
+          </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <label class="fontSizeText">{{lastKills | number}}</label>
+          <h4>Kills</h4>
+        </div> <div>
+        <label class="fontSizeText">{{lastDeaths | number}}</label>
+        <h4>Deaths</h4>
+      </div>
+      </ion-col>
+
+      <ion-col>
+        <h5>Damage: {{lastDamage | number}}</h5>
+        <h5>Cash: {{lastMoneySpent | currency:'USD':true }}</h5>
+        <h5>Mvp: {{lastMvp | number}}</h5>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+  </div>
+  </div>
+
+</ion-content>

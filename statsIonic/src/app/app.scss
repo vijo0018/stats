@@ -1,0 +1,73 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.toolbar-background {
+  background-color:  #222;
+}
+
+.tab-button{
+  background-color: #222;
+}
+.tab-button .tab-button-text{
+  color: #f4f4f4
+
+}
+.tab-button .tab-button-icon{
+  color: #f4f4f4;
+}
+
+.fixed-content{
+  background-color: rgb(0, 22, 47);
+}
+.toolbar-title {
+  color: #f4f4f4;
+}
+.activeHighlight{
+  color: #ffe6f0;
+}
+.menuButton{
+  background-color:transparent;
+  color: #9bfdff;
+}
+
+
+$toolbar-background: #123456;
+$toolbar-border-color: #123456;
+$toolbar-text-color: #123456;
+$toolbar-active-color: #123456;
+$toolbar-inactive-color: #123456;
+
+.scroll-content{
+}
+
+.bg-vid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 100%;;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url(http://video2.ignitemotion.com/files/mp4/bluefire.mp4) no-repeat;
+  background-size: cover;
+}

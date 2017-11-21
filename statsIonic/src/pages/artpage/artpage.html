@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title end>Art? :S</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="icons" color="primary">
+      <ion-segment-button  value="recent" (ionSelect)="updateRecent()">Recent
+      </ion-segment-button>
+      <ion-segment-button value="popular" (ionSelect)="updatePopular()">Popular
+      </ion-segment-button>
+      <ion-segment-button value="top" (ionSelect)="updateTop()">Top
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content #container padding>
+  <div>
+    <video autoplay muted loop class="bg-vid">
+      <source src="http://video2.ignitemotion.com/files/mp4/bluefire.mp4" type="video/webm">
+      <source src="http://video2.ignitemotion.com/files/mp4/bluefire.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div *ngFor="let art of csArt ">
+    <img [src]="art">
+  </div>
+
+<!--
+    <div *ngFor="let art of csArt">
+      <img [lazyLoad]="art" [scrollObservable]="container.ionScroll" [offset]=100>
+    </div>
+  <img [defaultImage]='"https://www.placecage.com/1000/1000"' [lazyLoad]='"https://hd.unsplash.com/photo-1431400445088-1750c997c6b5"' [scrollObservable]="container.ionScroll" />
+
+-->
+</ion-content>

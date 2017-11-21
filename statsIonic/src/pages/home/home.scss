@@ -1,0 +1,73 @@
+page-home {
+
+  .linkStyle{
+    color: #1a2f33;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+  .linkStyleDiv{
+    margin-bottom:10px;
+    padding-bottom:10px;
+  }
+  .line{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 6px 10px;
+  }
+  .linkStyleDiv2{
+    margin-bottom:3px;
+    padding-bottom:3px;
+    font-size: 14px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: #2d6da3;
+    font-weight: 700;
+  }
+  .news{
+    font-size: 11px;
+    color: rgba(9,21,31,.75);
+    text-align: right;
+    font-weight: 400;
+    line-height: 11px;
+    margin: -1px 0;
+    min-width: 80px;
+  }
+  .bg-vid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(http://video2.ignitemotion.com/files/mp4/bluefire.mp4) no-repeat;
+    background-size: cover;
+  }
+  .label{
+    margin:0;
+  }
+  .button{
+    background-color: rgb(0, 22, 47);
+  }
+  .contentCenter {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+  }
+}

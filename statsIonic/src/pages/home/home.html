@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title end>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <video autoplay muted loop class="bg-vid">
+      <source src="http://video2.ignitemotion.com/files/mp4/bluefire.mp4" type="video/webm">
+      <source src="http://video2.ignitemotion.com/files/mp4/bluefire.mp4" type="video/mp4">
+    </video>
+  </div>
+
+    <ion-grid>
+
+<ion-row>
+  <ion-col></ion-col>
+  <button ion-button (click)="moreInfoCom()">Community  &nbsp;<ion-icon *ngIf="wasClickedCom == true" name="add"></ion-icon> <ion-icon *ngIf="wasClickedCom == false" name="remove"></ion-icon></button>
+  <button ion-button (click)="moreInfo()">Latest news   &nbsp;<ion-icon *ngIf="wasClicked == true"  name="add"></ion-icon> <ion-icon *ngIf="wasClicked == false" name="remove"></ion-icon></button>
+  <ion-col></ion-col>
+</ion-row>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col *ngIf="wasClickedCom == false" >
+          <div class="linkStyleDiv" *ngFor="let c of singleArray">
+            <a ion-item class="linkStyle" href="{{c.link}}"><img src="{{c.image}}" width="90" height="90">  <p>{{c.title}}</p></a>
+          </div>
+        </ion-col>
+        <ion-col *ngIf="wasClicked == false"  style="margin-top: 20px;">
+          <div  class="linkStyleDiv2"  *ngFor="let s of simpleArray">
+            <div>
+            <a ion-item class="linkStyle" href="{{s.link}}"> <img src="{{s.image}}" height="12" width="18">&nbsp; {{s.title}}<div style="float:right; color:rebeccapurple;" class="news">{{s.recent}}</div></a>
+          </div>
+          </div>
+        </ion-col>
+
+        <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

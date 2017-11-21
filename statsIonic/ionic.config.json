@@ -1,0 +1,12 @@
+{
+  "name": "statsIonic",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://api.steampowered.com/"
+    }
+  ],
+  "integrations": {},
+  "type": "ionic-angular"
+}
